@@ -9,7 +9,6 @@ namespace WPFMvvmPubBar.Repositories
 {
     public class FakeRepo
     {
-
         public List<Beer> GetAll()
         {
             return new List<Beer>
@@ -17,22 +16,31 @@ namespace WPFMvvmPubBar.Repositories
                 new Beer
                 {
                     Name="Xirdalan",
-                    Price=2.20,
-                    Volume=4.8,
-                    ImagePath="/Images/xirdalan.png"
+                    Price="2.20 AZN",
+                    Volume="4.8 %",
+                    ImagePath="/Images/Xirdalan.png"
                 },
                 new Beer
                 {
                     Name="NZS",
-                    Price=1.95,
-                    Volume=10,
+                    Price="1.95 AZN",
+                    Volume="3.5 %",
                     ImagePath="/Images/Nzs.jpg"
                 },
                 new Beer
                 {
-                    
+                    Name="Efes",
+                    Price="1.9 AZN",
+                    Volume="4.5 %",
+                    ImagePath="/Images/Efes.png"
+                },
+                new Beer
+                {
+                    Name="Efsane",
+                    Price="3 AZN",
+                    Volume="4.7 %",
+                    ImagePath="/Images/Efsane.jpg"
                 }
-
             };
         }
     }

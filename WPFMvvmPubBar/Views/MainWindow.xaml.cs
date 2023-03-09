@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFMvvmPubBar.ViewModels;
 
 namespace WPFMvvmPubBar
 {
@@ -23,6 +24,9 @@ namespace WPFMvvmPubBar
         public MainWindow()
         {
             InitializeComponent();
+
+            var vm = new MainViewModel();
+            this.DataContext = vm;
         }
     }
 }
