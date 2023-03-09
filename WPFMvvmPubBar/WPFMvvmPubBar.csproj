@@ -65,7 +65,8 @@
     </Compile>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Models\Entity.cs" />
-    <Compile Include="Models\Peer.cs" />
+    <Compile Include="Models\Beer.cs" />
+    <Compile Include="Repositories\FakeRepo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -98,8 +99,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <Resource Include="Images\Efes.png" />
+    <Resource Include="Images\Efsane.jpg" />
+    <Resource Include="Images\Nzs.jpg" />
+    <Resource Include="Images\xirdalan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Efes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
