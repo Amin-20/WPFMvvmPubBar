@@ -16,29 +16,29 @@ namespace WPFMvvmPubBar.Repositories
                 new Beer
                 {
                     Name="Xirdalan",
-                    Price="2.20 AZN",
-                    Volume="4.8 %",
+                    Price=2.20,
+                    Volume=4.8,
                     ImagePath="/Images/Xirdalan.png"
                 },
                 new Beer
                 {
                     Name="NZS",
-                    Price="1.95 AZN",
-                    Volume="3.5 %",
+                    Price=1.95,
+                    Volume=3.5 ,
                     ImagePath="/Images/Nzs.jpg"
                 },
                 new Beer
                 {
                     Name="Efes",
-                    Price="1.9 AZN",
-                    Volume="4.5 %",
+                    Price=1.9,
+                    Volume=4.5,
                     ImagePath="/Images/Efes.png"
                 },
                 new Beer
                 {
                     Name="Efsane",
-                    Price="3 AZN",
-                    Volume="4.7 %",
+                    Price=3 ,
+                    Volume=4.7,
                     ImagePath="/Images/Efsane.jpg"
                 }
             };
