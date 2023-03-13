@@ -10,6 +10,7 @@
         ResizeMode="NoResize"
         Icon="/Images/pub.png"
         >
+    
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -122,6 +123,7 @@
             </Setter>
         </Style>
     </Window.Resources>
+    
     <Canvas>
         <ComboBox Name="myComboBox" 
                   Canvas.Top="3" 
@@ -142,15 +144,16 @@
         <Label FontSize="25" Canvas.Left="254" Canvas.Top="113" >Price :</Label>
         <Label FontSize="25" Canvas.Left="254" Canvas.Top="174" >Volume :</Label>
         <Label FontSize="25" Canvas.Left="352" Canvas.Top="56" Content="{Binding Beer.Name}"></Label>
-        <Label FontSize="25" Canvas.Left="347" Canvas.Top="113" Content="{Binding Beer.Price,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+        <Label FontSize="25" Canvas.Left="347" Canvas.Top="113" Content="{Binding Total}" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
         <Label FontSize="25" Canvas.Left="365" Canvas.Top="174" Content="{Binding Beer.Volume}" HorizontalAlignment="Center" VerticalAlignment="Top" ></Label>
         <Button  Command="{Binding MinusButtonCommand}" Style="{DynamicResource ButtonStyle1}" Height="30" Width="34" Canvas.Left="254" Canvas.Top="238" FontSize="22" >-</Button>
         <Button Command="{Binding PlusButtonCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource ButtonStyle1}" Height="30" Width="34" Canvas.Left="357" Canvas.Top="238" FontSize="22">+</Button>
-        <Label  Name="infoLbl" FontSize="22" Canvas.Left="312" Canvas.Top="232">1</Label>
-        <Button Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="25" Canvas.Top="330" FontWeight="Bold" FontSize="27">Buy</Button>
-        <Button Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="200" Canvas.Top="330" FontWeight="Bold" FontSize="27" >Reset</Button>
+        <Label Content="{Binding Count}" Name="infoLbl" FontSize="22" Canvas.Left="312" Canvas.Top="232"></Label>
+        <Button Command="{Binding BuyCommand}" Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="25" Canvas.Top="330" FontWeight="Bold" FontSize="27">Buy</Button>
+        <Button Command="{Binding ResetButtonCommand}" Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="200" Canvas.Top="330" FontWeight="Bold" FontSize="27" >Reset</Button>
         <Button Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="374" Canvas.Top="330" FontWeight="Bold" FontSize="15" >Show History</Button>
-
+        
 
     </Canvas>
+    
 </Window>

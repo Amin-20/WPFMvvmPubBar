@@ -25,7 +25,7 @@ namespace WPFMvvmPubBar
         {
             InitializeComponent();
 
-            var vm = new MainViewModel(infoLbl);
+            var vm = new MainViewModel();
             this.DataContext = vm;
         }
     }

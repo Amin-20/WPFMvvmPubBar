@@ -36,9 +36,28 @@ namespace WPFMvvmPubBar.ViewModels
         public RelayCommand SelectedCommand { get; set; }
         public RelayCommand PlusButtonCommand { get; set; }
         public RelayCommand MinusButtonCommand { get; set; }
-        public RelayCommand CountCommand { get; set; }
+        public RelayCommand ResetButtonCommand { get; set; }
+        public RelayCommand BuyCommand { get; set; }
+        private double total;
 
-        public MainViewModel(Label countLbl)
+        public double Total
+        {
+            get { return total; }
+            set { total = value; OnPropertyChanged(); }
+        }
+
+
+        private int count = 0;
+
+        public int Count
+        {
+            get { return count; }
+            set { count = value; OnPropertyChanged(); }
+        }
+
+
+
+        public MainViewModel()
         {
             BeerRepository = new FakeRepo();
             AllBeers = new ObservableCollection<Beer>(BeerRepository.GetAll());
@@ -47,17 +66,15 @@ namespace WPFMvvmPubBar.ViewModels
 
             SelectedCommand = new RelayCommand((obj) =>
             {
+                Count = 0;
                 var item = obj as Beer;
                 Beer = item;
             });
 
             PlusButtonCommand = new RelayCommand((obj) =>
             {
-                var temp = Beer.Price;
-                Beer.Price += temp;
-                var temp1 = int.Parse(countLbl.Content.ToString());
-                temp1 += 1;
-                countLbl.Content = temp1.ToString();
+                Total += Beer.Price;
+                Count++;
             }, (pred) =>
             {
                 if (Beer.Id == 0)
@@ -69,17 +86,11 @@ namespace WPFMvvmPubBar.ViewModels
 
             MinusButtonCommand = new RelayCommand((obj) =>
             {
-                var temp = Beer.Price;
-                if (temp > Beer.Price)
+                if (Total > Beer.Price)
                 {
-                    Beer.Price -= temp;
+                    Total -= Beer.Price;
                 }
-                var temp1 = int.Parse(countLbl.Content.ToString());
-                if (temp1 > 0)
-                {
-                    temp1 -= 1;
-                }
-                countLbl.Content = temp1.ToString();
+                if (Count != 0) { Count--; }
             }, (pred) =>
             {
                 if (Beer.Id == 0)
@@ -89,7 +100,16 @@ namespace WPFMvvmPubBar.ViewModels
                 return true;
             });
 
+            ResetButtonCommand = new RelayCommand((obj) =>
+            {
+                Total = 0;
+                Count = 0;
+            });
 
+            BuyCommand = new RelayCommand((obj) =>
+            {
+
+            });
 
         }
 
