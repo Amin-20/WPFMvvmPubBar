@@ -12,25 +12,25 @@ namespace WPFMvvmPubBar
 {
     public class FileHelper
     {
-        public static void Write(Beer beer)
+        public static void Write(List<Sales> beers)
         {
             var serializer = new JsonSerializer();
-            using (var sw = new StreamWriter($"{beer.Name}.json"))
+            using (var sw = new StreamWriter($"Sales.json"))
             {
                 using (var jw = new JsonTextWriter(sw))
                 {
                     jw.Formatting = Newtonsoft.Json.Formatting.Indented;
-                    serializer.Serialize(jw, beer);
+                    serializer.Serialize(jw, beers);
                 }
             }
         }
 
-        public static Beer Read(string fileName)
+        public static List<Sales> Read(string fileName)
         {
-            Beer beer = new Beer();
+            List<Sales> beers = new List<Sales>();
             var context = File.ReadAllText(fileName);
-            beer = JsonConvert.DeserializeObject<Beer>(context);
-            return beer;
+            beers = JsonConvert.DeserializeObject<List<Sales>>(context);
+            return beers;
         }
     }
 }

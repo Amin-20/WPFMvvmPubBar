@@ -151,7 +151,7 @@
         <Label Content="{Binding Count}" Name="infoLbl" FontSize="22" Canvas.Left="312" Canvas.Top="232"></Label>
         <Button Command="{Binding BuyCommand}" Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="25" Canvas.Top="330" FontWeight="Bold" FontSize="27">Buy</Button>
         <Button Command="{Binding ResetButtonCommand}" Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="200" Canvas.Top="330" FontWeight="Bold" FontSize="27" >Reset</Button>
-        <Button Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="374" Canvas.Top="330" FontWeight="Bold" FontSize="15" >Show History</Button>
+        <Button Command="{Binding HistoryCommand}" Style="{DynamicResource ButtonStyle2}" Height="54" Width="98" Canvas.Left="374" Canvas.Top="330" FontWeight="Bold" FontSize="15" >Show History</Button>
         
 
     </Canvas>
