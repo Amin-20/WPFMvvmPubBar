@@ -42,7 +42,7 @@ namespace WPFMvvmPubBar.ViewModels
         public RelayCommand BuyCommand { get; set; }
         public RelayCommand HistoryCommand { get; set; }
 
-        public List<Sales> Products { get; set; } = new List<Sales>();
+        public ObservableCollection<Sales> Products { get; set; } = new ObservableCollection<Sales>();
 
 
         private double total;
@@ -138,7 +138,6 @@ namespace WPFMvvmPubBar.ViewModels
 
                     Products.Add(product);
 
-                    FileHelper.Write(Products);
 
                     Total = 0;
                     Count = 0;
@@ -158,7 +157,7 @@ namespace WPFMvvmPubBar.ViewModels
 
                 HistoryViewModel vm = new HistoryViewModel();
                 vm.HistoryWindow = hWindow;
-                vm.Sales = FileHelper.Read("Sales.json");
+                vm.Sales = Products;
 
                 hWindow.DataContext = vm;
                 hWindow.ShowDialog();

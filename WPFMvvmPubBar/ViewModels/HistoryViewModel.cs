@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,9 @@ namespace WPFMvvmPubBar.ViewModels
     public class HistoryViewModel : BaseViewModel
     {
         public HistoryWindow HistoryWindow { get; set; }
-        private List<Sales> sales;
+        private ObservableCollection<Sales> sales;
 
-        public List<Sales> Sales
+        public ObservableCollection<Sales> Sales
         {
             get { return sales; }
             set { sales = value; }
@@ -24,7 +25,8 @@ namespace WPFMvvmPubBar.ViewModels
 
         public HistoryViewModel()
         {
-            sales = new List<Sales>();
+            sales = new ObservableCollection<Sales>();
+
 
             OkCommand = new RelayCommand((obj) =>
             {

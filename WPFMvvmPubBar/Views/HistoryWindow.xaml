@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="HistoryWindow" Height="420" Width="408">
     <Canvas>
-        <GroupBox Header="Sales" FontSize="30" Height="329" Width="373" HorizontalAlignment="Left" Canvas.Left="10" VerticalAlignment="Center" >
-            <ItemsControl ItemsSource="{Binding Sales }" Margin="0,0,0,32"></ItemsControl>
-        </GroupBox>
+        <ListBox FontSize="20" Height="329" Width="373" HorizontalAlignment="Left" Canvas.Left="10">
+            <ItemsControl ItemsSource="{Binding Sales.Item.Name}"  Margin="0,0,0,32"></ItemsControl>
+        </ListBox>
         <Button Command="{Binding OkCommand}" Width="100" Height="26" Canvas.Left="263" Canvas.Top="345" Content="OK" FontSize="17"/>
     </Canvas>
 </Window>
