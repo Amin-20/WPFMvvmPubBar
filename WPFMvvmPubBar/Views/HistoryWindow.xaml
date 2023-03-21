@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFMvvmPubBar.Views"
         mc:Ignorable="d"
-        Title="HistoryWindow" Height="420" Width="408">
-    <Canvas>
-        <ListBox FontSize="20" Height="329" Width="373" HorizontalAlignment="Left" Canvas.Left="10">
-            <ItemsControl ItemsSource="{Binding Sales.Item.Name}"  Margin="0,0,0,32"></ItemsControl>
-        </ListBox>
-        <Button Command="{Binding OkCommand}" Width="100" Height="26" Canvas.Left="263" Canvas.Top="345" Content="OK" FontSize="17"/>
-    </Canvas>
+        Title="HistoryWindow" Height="420" Width="664">
+    <Grid>
+        <ListView ItemsSource="{Binding Sales}" Foreground="Black" FontWeight="DemiBold" FontSize="18" HorizontalAlignment="Center">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Header="Price" Width="150" DisplayMemberBinding="{Binding ProductPrice}"></GridViewColumn>
+                    <GridViewColumn Header="Count" Width="150" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                    <GridViewColumn Header="Total Price" Width="150" DisplayMemberBinding="{Binding Price}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
 </Window>
